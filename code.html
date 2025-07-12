@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズプログラム</title>
+    <link rel="stylesheet" href="code.css">
+    <!-- PapaParse ライブラリのCDNリンクを追加 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>クイズ</h1>
+
+        <div id="uploadSection">
+            <label for="csvFile">CSVファイルを選択してください:</label>
+            <input type="file" id="csvFile" accept=".csv">
+            <p class="instructions">（CSVファイルをアップロードするとクイズが始まります）</p>
+        </div>
+
+        <div id="quizSection" style="display: none;">
+            <div id="questionArea">
+                <p id="question"></p>
+            </div>
+            
+            <div class="quiz-content">
+                <div id="optionsArea">
+                    <!-- 選択肢ボタンがここに動的に生成されます -->
+                </div>
+                <!-- 「次の問題へ」ボタン -->
+                <button id="nextButton">次の問題へ</button>
+            </div>
+
+            <div id="feedbackArea">
+                <p id="feedbackMessage"></p>
+                <div id="feedbackVisual"></div>
+            </div>
+
+            <!-- 画面下部のボタン配置 -->
+            <div class="button-group-bottom">
+                <button id="restartButton">リスタート</button>
+                <button id="downloadResultsButton">学習履歴をダウンロード</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+</body>
+</html>
